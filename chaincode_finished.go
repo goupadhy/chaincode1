@@ -3,7 +3,7 @@ Copyright IBM Corp 2016 All Rights Reserved.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
+You may obtain a copy of the License at funsies
 
 		 http://www.apache.org/licenses/LICENSE-2.0
 
@@ -52,7 +52,7 @@ func (t *SimpleChaincode) Init(stub *shim.ChaincodeStub, function string, args [
 func (t *SimpleChaincode) Invoke(stub *shim.ChaincodeStub, function string, args []string) ([]byte, error) {
 	fmt.Println("invoke is running " + function)
 
-	// Handle different functions
+	// Handle different functions 1
 	if function == "init" {
 		return t.Init(stub, "init", args)
 	} else if function == "write" {
@@ -67,7 +67,7 @@ func (t *SimpleChaincode) Invoke(stub *shim.ChaincodeStub, function string, args
 func (t *SimpleChaincode) Query(stub *shim.ChaincodeStub, function string, args []string) ([]byte, error) {
 	fmt.Println("query is running " + function)
 
-	// Handle different functions
+	// Handle different functions 2
 	if function == "read" { //read a variable
 		return t.read(stub, args)
 	}
@@ -95,7 +95,7 @@ func (t *SimpleChaincode) write(stub *shim.ChaincodeStub, args []string) ([]byte
 	return nil, nil
 }
 
-// read - query function to read key/value pair
+// read - query function to read key/value pair 1
 func (t *SimpleChaincode) read(stub *shim.ChaincodeStub, args []string) ([]byte, error) {
 	var key, jsonResp string
 	var err error
